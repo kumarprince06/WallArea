@@ -1,23 +1,58 @@
-# Compiled class file
-*.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+public class Wall {
+    private double width;
+    private double height;
+    
+    public Wall(){
+        
+    }
+    public Wall(double width, double height){
+        if(width < 0){
+            this.width = 0;
+        }else{
+            this.width = width;
+        }
+        
+        if(height < 0){
+            this.height = 0;
+        }else{
+            this.height = height;
+        }
+    }
+    
+    public double getWidth(){
+        return width;
+    }
+    
+    public double getHeight(){
+        return height;
+    }
+    
+    public void setWidth(double width){
+        if(width < 0){
+            this.width = 0.0;
+        }else{
+            this.width = width;
+        }
+    }
+    
+    public void setHeight(double height){
+        if(height < 0){
+            this.height = 0.0;
+        }else{
+            this.height = height;
+        }
+    }
+    
+    public double getArea(){
+        return height*width;
+    }
+    
+    public static void main(String args[]){
+        Wall wall = new Wall(5,4);
+        System.out.println("area= " + wall.getArea()); 
+        wall.setHeight(-1.5);
+        System.out.println("width= " + wall.getWidth());
+        System.out.println("height= " + wall.getHeight());
+        System.out.println("area= " + wall.getArea());
+    }
+}
